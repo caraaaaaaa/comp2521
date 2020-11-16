@@ -1,0 +1,39 @@
+Results for Tests on 5000 values
+
+Depth = depth of tree, Cost = average #comparisons per search
+
+
+             Ascending Order        Prefix Order        Random Order
+Insert
+Method     Depth      Cost       Depth      Cost     Depth       Cost
+
+L         5000        3114.47     13       11.75       28        15.95
+
+A         5000        1886.53     2954     1114.67     28        16.29
+
+R         2492        951.5       1774     675.35      27        15.15
+
+B         206         62.52        20     13.64        23        13.02
+
+S         5000/33      23.60      5000/29  23.60    31/1149      22.72
+
+V          13          11.77       14      12.10       15        11.79
+
+
+Notes (what the above indicates):
+The Ascending Order always make the tree on one side.In this situation
+So when Insert at the leave or root ,it will only make a tree only on the right side or on the left side.
+
+But if you insert at the leave or root randomly,it Will separate on two side in average ,so the depth is in a half.
+
+When te depth is large the cost is large as the tree is large so it has to compare more items.
+
+Prefix Order and Random order make the tree small than Ascending Order because the depth will not increase time by time during the insert.
+
+From the table we know that the AVL tree is the most effective way of search in any way of insert;
+
+At the same time ,compare L and B we know that rebalance every time will also help decrease the time of compare.
+
+Prefix Order is bulit for a balance order so it is easier to search.
+
+When the order is random,the way of insert effect less
