@@ -1,0 +1,23 @@
+
+#include "list.h"
+
+bool listIsOrdered(List l) {
+	Node a = l->head;
+	if (a == NULL || a->next == NULL) return true;
+	if (a->value >= a->next->value) {
+	    while (a != NULL) {
+	        if (a->value < a->next->value) {
+	            return false;
+	        }
+	        a = a->next;
+	    }
+	} else {
+	    while (a != NULL) {
+	        if (a->value > a->next->value) {
+	            return false;
+	        }
+	        a = a->next;
+	    }
+	}
+	return true;
+}
