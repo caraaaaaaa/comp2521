@@ -1,0 +1,74 @@
+> this is
+a small file
+containing a few lines
+of boring text
+> a small file
+> > > > this is
+> > this is
+> this is
+> > this is
+> > > newnewnewnew
+this is
+> this is
+> this is
+> this is
+> this is
+> this is
+> this is
+> this is
+> this is
+> > newnewnewnew
+this is
+> > > > > > > > > > (null)
+> (null)
+> (null)
+> (null)
+> (null)
+> (null)
+> (null)
+> (null)
+> (null)
+> (null)
+> (null)
+> (null)
+> (null)
+> (null)
+> (null)
+> (null)
+> > > (null)
+> > > > > > > > > > 6
+5
+4
+3
+2
+1
+> > > 
+6
+5
+4
+3
+2
+1
+> Editor commands:
+    . = show current line
+    % = show all lines
+    p = move to previous line and show it
+    n = move to next line and show it
+    NN = move to line number NN
+    +NN = move forward by NN lines and show line
+    -NN = move backward by NN lines and show line
+    i = read new line and insert in front of current
+    a = read new line and insert after current
+    d = delete current line
+    w = write out contents of file to file FileName.new
+    ? = show this help message
+    q = quit from the editor
+
+> > 
+6
+5
+4
+3
+2
+1
+> 

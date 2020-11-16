@@ -1,0 +1,176 @@
+// testTextbuffer.c
+// A stub file for you to test your textbuffer implementation.
+// Note that you will NOT be submitting this - this is simply for you to
+// test  your  functions as you go. We will have our own testTexbuffer.c
+// for testing your submission.
+
+#include <assert.h>
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include "textbuffer.h"
+
+#define _SVID_SOURCE
+#define _POSIX_C_SOURCE 200809L
+
+static void testNewTB(void);
+
+// TODO: Add more function prototypes
+
+
+int main(void) {
+	
+	testNewTB();
+	
+
+	printf("--------------test delete----------------\n");
+
+	//TB tba = newTB("hello there,\nhow\nare\nthings\n");
+	//TB tb2 = newTB("hello there,\nhow\nare\nthings\na\n");
+	//TB tb3 = newTB("hello there,\nhow\nare\nthings\na\na\n");
+	//TB tb4 = newTB("hello there,\nhow\nare\nthings\n");	
+	// TB tb5 = newTB("/0");
+
+
+	//printf("a----------\n");
+	//deleteTB(tba, 1, 4);
+	//assert(linesTB(tba) == 0);
+	/*
+	printf("b-----------\n");
+	deleteTB(tb2, 1, 5);
+	assert(linesTB(tb2) == 0);
+
+	printf("c------------\n");
+	deleteTB(tb3, 1, 2);
+	assert(linesTB(tb3) == 4);
+
+	printf("d-----------\n");
+	deleteTB(tb4, 3, 4);
+	assert(linesTB(tb4) == 2);
+*/
+	// printf("e\n");
+	// deleteTB(tb5,1,1);
+	// assert(linesTB(tb5) == 0);
+
+	//releaseTB(tb1);
+	//releaseTB(tb2);
+	//releaseTB(tb3);
+	//releaseTB(tb4);
+	//releaseTB(tb5);
+
+	printf("\n------------testDelete tests passed!--------------\n\n");
+
+
+	printf("--------------test dump----------------\n");
+
+/*
+	TB tbd = newTB("hello there,\nbalcjbqkas.\ncadcasaz\ndaecfqwc\n");
+	dumpTB(tbd, true);
+	dumpTB(tbd, false);
+	assert(linesTB(tbd) == 4);
+
+	TB tbcc = newTB("");
+	dumpTB(tbcc, true);
+	dumpTB(tbcc, false);
+	assert(linesTB(tbcc) == 0);
+
+	releaseTB(tbd);
+	releaseTB(tbcc);
+
+
+	printf("\n------------dump tests passed!--------------\n\n");
+*/
+
+	printf("--------------test paste----------------\n");
+/*
+	TB tbe = newTB("a\nb\nc\nd\nf\ng\n");
+	TB tbr = newTB("a\nb\nc\nd\nf\n");
+	pasteTB(tbe, 1, tbr);
+*/
+
+
+	printf("--------------test addPrefix----------------\n");
+
+	/*
+	TB tb7 = newTB("hello there,\nhow\nare\nthings\na\n");
+
+	printf("a");
+	addPrefixTB (tb7, 3, 1, "goodnight ");
+	releaseTB(tb7);
+
+	*/
+	printf("\n------------addPrefix tests passed!--------------\n\n");
+	
+
+
+	printf("--------------test mergeTB----------------\n");
+
+	printf("aaaa\n");
+	TB tb8 = newTB("8 1\n8 2\n8 3\n8 4\n8 5\n9 6\n");   // 5
+	//TB tb8 = newTB("");
+	TB tb9 = newTB("9 1\n9 2\n9 3\n9 4\n9 5\n"); // 5
+	printf("b\n");
+	mergeTB(tb8, 1, tb9);
+	assert(linesTB(tb8) ==11);
+printf("\n\n\n\n");
+
+
+	printf("bbbb\n");
+	TB tb10 = newTB("");   
+	TB tb11 = newTB("9 1\n9 2\n9 3\n9 4\n9 5\n"); // 5
+	printf("b\n");
+	mergeTB(tb10, 1, tb11);
+	assert(linesTB(tb10) ==5);
+
+printf("\n\n\n");
+
+
+	printf("cccc\n");
+	TB tb12 = newTB("10\n11\n12\n");   //3
+	TB tb13 = newTB("91\n92\n93\n94\n95\n"); // 5
+	printf("b\n");
+	mergeTB(tb12, 2, tb13);
+	assert(linesTB(tb12) == 8);
+
+
+
+/*
+	printf("dddd\n");
+	TB tb12 = newTB("10\n11\n12\n");   //3
+	TB tb13 = newTB("91\n92\n93\n94\n95\n"); // 5
+	printf("b\n");
+	mergeTB(tb12, 2, tb13);
+	assert(linesTB(tb12) == 8);
+*/
+
+
+	printf("\n------------merge tests passed!--------------\n\n");
+
+
+
+	printf("\n\n******************************************************\n"
+		   "---------All tests passed! You are awesome!-----------\n"
+		   "******************************************************\n\n");
+}
+
+static void testNewTB(void) {
+	printf("-----------------------------------------\n"
+	       "               newTB tests               \n"
+	       "-----------------------------------------\n");
+
+	// Calling dumpTB immediately after newTB, without modifying the TB
+	TB tb1 = newTB("hello there,\nhow\nare\nthings\n");
+	assert(linesTB(tb1) == 4);
+
+	char *text1 = dumpTB(tb1, false); // Don't show line numbers
+	assert(strcmp("hello there,\nhow\nare\nthings\n", text1) == 0);
+	free(text1);
+	
+	releaseTB(tb1);
+	
+	printf("newTB tests passed!\n");
+}
+
+// TODO: Add more test functions
